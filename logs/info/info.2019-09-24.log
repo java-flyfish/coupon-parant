@@ -1,0 +1,88 @@
+2019-09-24 15:31:43.110 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 13283 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-24 15:31:43.112 [main] - The following profiles are active: test
+2019-09-24 15:31:44.110 [main] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 15:31:44.115 [main] - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 15:31:44.168 [main] - Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-09-24 15:31:44.607 [main] - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$5b6a5d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.615 [main] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$67ada223] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.636 [main] - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.639 [main] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@19a64eae' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.642 [main] - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$25300d0f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.645 [main] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:31:44.946 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-24 15:31:44.965 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-24 15:31:44.974 [main] - Starting service [Tomcat]
+2019-09-24 15:31:44.974 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 15:31:45.083 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-24 15:31:45.083 [main] - Root WebApplicationContext: initialization completed in 1884 ms
+2019-09-24 15:31:45.437 [main] - Stopping service [Tomcat]
+2019-09-24 15:31:45.456 [main] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-09-24 15:31:45.466 [main] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-24 15:33:17.079 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 13299 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-24 15:33:17.083 [main] - The following profiles are active: test
+2019-09-24 15:33:17.964 [main] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 15:33:17.967 [main] - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 15:33:18.012 [main] - Finished Spring Data repository scanning in 30ms. Found 0 repository interfaces.
+2019-09-24 15:33:18.426 [main] - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$15c32d0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.433 [main] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$68ae6a96] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.457 [main] - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.459 [main] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@65ddee5a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.461 [main] - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$2630d582] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.465 [main] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:18.735 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-24 15:33:18.750 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-24 15:33:18.759 [main] - Starting service [Tomcat]
+2019-09-24 15:33:18.760 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 15:33:18.841 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-24 15:33:18.841 [main] - Root WebApplicationContext: initialization completed in 1689 ms
+2019-09-24 15:33:19.171 [main] - Stopping service [Tomcat]
+2019-09-24 15:33:19.202 [main] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-09-24 15:33:19.216 [main] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-24 15:33:33.852 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 13304 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-24 15:33:33.855 [main] - The following profiles are active: test
+2019-09-24 15:33:34.520 [main] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 15:33:34.522 [main] - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 15:33:34.562 [main] - Finished Spring Data repository scanning in 25ms. Found 0 repository interfaces.
+2019-09-24 15:33:34.911 [main] - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$c30c6735] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:34.919 [main] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$2a5e9efb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:34.936 [main] - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:34.938 [main] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7ff8a9dc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:34.940 [main] - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e7e109e7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:34.943 [main] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:33:35.169 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-24 15:33:35.189 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-24 15:33:35.199 [main] - Starting service [Tomcat]
+2019-09-24 15:33:35.199 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 15:33:35.279 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-24 15:33:35.279 [main] - Root WebApplicationContext: initialization completed in 1368 ms
+2019-09-24 15:33:35.550 [main] - Stopping service [Tomcat]
+2019-09-24 15:33:35.562 [main] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-09-24 15:33:35.571 [main] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-09-24 15:36:56.656 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 13307 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-24 15:36:56.660 [main] - The following profiles are active: test
+2019-09-24 15:36:57.544 [main] - Multiple Spring Data modules found, entering strict repository configuration mode!
+2019-09-24 15:36:57.547 [main] - Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-09-24 15:36:57.591 [main] - Finished Spring Data repository scanning in 29ms. Found 0 repository interfaces.
+2019-09-24 15:36:57.978 [main] - Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration$$EnhancerBySpringCGLIB$$bbecb586] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:57.985 [main] - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$233eed4c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:58.007 [main] - Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:58.009 [main] - Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@2e5b7fba' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:58.010 [main] - Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration$$EnhancerBySpringCGLIB$$e0c15838] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:58.014 [main] - Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-09-24 15:36:58.256 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-24 15:36:58.270 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-24 15:36:58.280 [main] - Starting service [Tomcat]
+2019-09-24 15:36:58.280 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-24 15:36:58.363 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-24 15:36:58.363 [main] - Root WebApplicationContext: initialization completed in 1625 ms
+2019-09-24 15:36:58.609 [main] - Stopping service [Tomcat]
+2019-09-24 15:36:58.627 [main] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-09-24 15:36:58.635 [main] - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

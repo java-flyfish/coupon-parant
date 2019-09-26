@@ -1,0 +1,127 @@
+2019-09-20 14:16:28.079 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 4438 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 14:16:28.082 [main] - The following profiles are active: test
+2019-09-20 14:16:29.468 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 14:16:29.490 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:16:29.500 [main] - Starting service [Tomcat]
+2019-09-20 14:16:29.500 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 14:16:29.629 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 14:16:29.629 [main] - Root WebApplicationContext: initialization completed in 1485 ms
+2019-09-20 14:16:29.763 [main] - Init DruidDataSource
+2019-09-20 14:16:30.163 [main] - {dataSource-1} inited
+2019-09-20 14:16:30.489 [main] - Warn: Could not find @TableId in Class: com.woolen.coupon.entry.UserRole.
+2019-09-20 14:16:30.664 [main] - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:16:30.893 [main] - Starting ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:16:30.939 [main] - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-20 14:16:30.943 [main] - Started CouponControllerApplication in 3.864 seconds (JVM running for 4.694)
+2019-09-20 14:16:45.733 [http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-20 14:16:45.734 [http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+2019-09-20 14:16:45.754 [http-nio-8080-exec-1] - Completed initialization in 20 ms
+2019-09-20 14:17:06.595 [Thread-11] - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:17:06.604 [Thread-11] - {dataSource-1} closed
+2019-09-20 14:17:38.826 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 4445 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 14:17:38.829 [main] - The following profiles are active: test
+2019-09-20 14:17:40.149 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 14:17:40.169 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:17:40.179 [main] - Starting service [Tomcat]
+2019-09-20 14:17:40.180 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 14:17:40.312 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 14:17:40.312 [main] - Root WebApplicationContext: initialization completed in 1419 ms
+2019-09-20 14:17:40.438 [main] - Init DruidDataSource
+2019-09-20 14:17:40.836 [main] - {dataSource-1} inited
+2019-09-20 14:17:41.149 [main] - Warn: Could not find @TableId in Class: com.woolen.coupon.entry.UserRole.
+2019-09-20 14:17:41.327 [main] - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:17:41.561 [main] - Starting ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:17:41.603 [main] - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-20 14:17:41.608 [main] - Started CouponControllerApplication in 3.735 seconds (JVM running for 4.564)
+2019-09-20 14:17:44.568 [http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-20 14:17:44.569 [http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+2019-09-20 14:17:44.578 [http-nio-8080-exec-1] - Completed initialization in 9 ms
+2019-09-20 14:18:04.710 [Thread-10] - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:18:04.722 [Thread-10] - {dataSource-1} closed
+2019-09-20 14:21:26.313 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 4452 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 14:21:26.316 [main] - The following profiles are active: test
+2019-09-20 14:21:27.778 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 14:21:27.799 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:21:27.826 [main] - Starting service [Tomcat]
+2019-09-20 14:21:27.826 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 14:21:27.947 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 14:21:27.948 [main] - Root WebApplicationContext: initialization completed in 1566 ms
+2019-09-20 14:21:28.088 [main] - Init DruidDataSource
+2019-09-20 14:21:28.503 [main] - {dataSource-1} inited
+2019-09-20 14:21:28.814 [main] - Warn: Could not find @TableId in Class: com.woolen.coupon.entry.UserRole.
+2019-09-20 14:21:28.986 [main] - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:21:29.254 [main] - 
+
+Using generated security password: 70b4989a-3670-4a7e-b14a-3d1806e51edc
+
+2019-09-20 14:21:29.350 [main] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@11e9ac24, org.springframework.security.web.context.SecurityContextPersistenceFilter@543fe698, org.springframework.security.web.header.HeaderWriterFilter@22f02996, org.springframework.security.web.csrf.CsrfFilter@4ef18604, org.springframework.security.web.authentication.logout.LogoutFilter@5fef0c19, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@33d28f0a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@512abf25, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@74f280bd, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@42c12b3e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ca3d826, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5438fa43, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@675b18ff, org.springframework.security.web.session.SessionManagementFilter@42c0a16e, org.springframework.security.web.access.ExceptionTranslationFilter@24134cbc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1595d2b2]
+2019-09-20 14:21:29.409 [main] - Starting ProtocolHandler ["http-nio-8080"]
+2019-09-20 14:21:29.446 [main] - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-20 14:21:29.451 [main] - Started CouponControllerApplication in 4.196 seconds (JVM running for 5.228)
+2019-09-20 14:21:39.981 [http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-20 14:21:39.983 [http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+2019-09-20 14:21:40.005 [http-nio-8080-exec-1] - Completed initialization in 22 ms
+2019-09-20 14:22:20.745 [Thread-12] - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-20 14:22:20.755 [Thread-12] - {dataSource-1} closed
+2019-09-20 21:40:25.462 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 6672 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 21:40:25.473 [main] - The following profiles are active: test
+2019-09-20 21:40:27.014 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 21:40:27.036 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 21:40:27.045 [main] - Starting service [Tomcat]
+2019-09-20 21:40:27.045 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 21:40:27.150 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 21:40:27.150 [main] - Root WebApplicationContext: initialization completed in 1616 ms
+2019-09-20 21:40:27.372 [main] - Init DruidDataSource
+2019-09-20 21:41:16.888 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 6677 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 21:41:16.892 [main] - The following profiles are active: test
+2019-09-20 21:41:18.450 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 21:41:18.471 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 21:41:18.482 [main] - Starting service [Tomcat]
+2019-09-20 21:41:18.482 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 21:41:18.599 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 21:41:18.599 [main] - Root WebApplicationContext: initialization completed in 1592 ms
+2019-09-20 21:41:18.816 [main] - Init DruidDataSource
+2019-09-20 21:41:19.324 [main] - {dataSource-1} inited
+2019-09-20 21:41:19.777 [main] - Warn: Could not find @TableId in Class: com.woolen.coupon.entry.UserRole.
+2019-09-20 21:41:19.997 [main] - Creating filter chain: Ant [pattern='/css/**'], []
+2019-09-20 21:41:19.998 [main] - Creating filter chain: Ant [pattern='/js/**'], []
+2019-09-20 21:41:20.041 [main] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@372461a9, org.springframework.security.web.context.SecurityContextPersistenceFilter@18d47df0, org.springframework.security.web.header.HeaderWriterFilter@79957f11, org.springframework.security.web.authentication.logout.LogoutFilter@491cafec, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@79d7035, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@697a0948, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16d0e521, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5fffb692, org.springframework.security.web.session.SessionManagementFilter@4b41587d, org.springframework.security.web.access.ExceptionTranslationFilter@2dd1086, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@457a5b2d]
+2019-09-20 21:41:20.230 [main] - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-20 21:41:20.546 [main] - Starting ProtocolHandler ["http-nio-8080"]
+2019-09-20 21:41:20.587 [main] - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-20 21:41:20.592 [main] - Started CouponControllerApplication in 4.623 seconds (JVM running for 5.403)
+2019-09-20 21:41:30.932 [http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-20 21:41:30.932 [http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+2019-09-20 21:41:30.944 [http-nio-8080-exec-1] - Completed initialization in 12 ms
+2019-09-20 21:41:52.915 [http-nio-8080-exec-5] - 当前登陆用户：admin
+2019-09-20 21:41:58.200 [http-nio-8080-exec-7] - 当前登陆用户：admin
+2019-09-20 21:42:01.273 [http-nio-8080-exec-9] - 当前登陆用户：admin
+2019-09-20 21:42:22.978 [http-nio-8080-exec-5] - 当前登陆用户：jitwxs
+2019-09-20 21:42:25.155 [http-nio-8080-exec-7] - 当前登陆用户：jitwxs
+2019-09-20 21:42:27.742 [http-nio-8080-exec-9] - 当前登陆用户：jitwxs
+2019-09-20 21:42:39.959 [Thread-12] - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-20 21:42:39.970 [Thread-12] - {dataSource-1} closed
+2019-09-20 21:43:49.175 [main] - Starting CouponControllerApplication on tongweiyangdeMacBook-Pro.local with PID 6682 (/Users/tong-pc/IdeaProjects/woollen/coupon-parant/coupon-controller/target/classes started by tong-pc in /Users/tong-pc/IdeaProjects/woollen/coupon-parant)
+2019-09-20 21:43:49.177 [main] - The following profiles are active: test
+2019-09-20 21:43:50.289 [main] - Tomcat initialized with port(s): 8080 (http)
+2019-09-20 21:43:50.300 [main] - Initializing ProtocolHandler ["http-nio-8080"]
+2019-09-20 21:43:50.307 [main] - Starting service [Tomcat]
+2019-09-20 21:43:50.307 [main] - Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019-09-20 21:43:50.375 [main] - Initializing Spring embedded WebApplicationContext
+2019-09-20 21:43:50.376 [main] - Root WebApplicationContext: initialization completed in 1152 ms
+2019-09-20 21:43:50.542 [main] - Init DruidDataSource
+2019-09-20 21:43:50.909 [main] - {dataSource-1} inited
+2019-09-20 21:43:51.200 [main] - Warn: Could not find @TableId in Class: com.woolen.coupon.entry.UserRole.
+2019-09-20 21:43:51.375 [main] - Creating filter chain: Ant [pattern='/css/**'], []
+2019-09-20 21:43:51.375 [main] - Creating filter chain: Ant [pattern='/js/**'], []
+2019-09-20 21:43:51.410 [main] - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1653b84e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7d2c345d, org.springframework.security.web.header.HeaderWriterFilter@7d2c9361, org.springframework.security.web.authentication.logout.LogoutFilter@15214920, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3757e8e2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5db948c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d1c164a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7f8a9454, org.springframework.security.web.session.SessionManagementFilter@fbe70d8, org.springframework.security.web.access.ExceptionTranslationFilter@450f0235, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@580902cd]
+2019-09-20 21:43:51.573 [main] - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-20 21:43:51.826 [main] - Starting ProtocolHandler ["http-nio-8080"]
+2019-09-20 21:43:51.860 [main] - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-20 21:43:51.863 [main] - Started CouponControllerApplication in 3.504 seconds (JVM running for 4.324)
+2019-09-20 21:43:59.946 [http-nio-8080-exec-1] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-20 21:43:59.946 [http-nio-8080-exec-1] - Initializing Servlet 'dispatcherServlet'
+2019-09-20 21:43:59.962 [http-nio-8080-exec-1] - Completed initialization in 15 ms
+2019-09-20 21:44:07.086 [http-nio-8080-exec-3] - Encoded password does not look like BCrypt
+2019-09-20 21:44:46.343 [Thread-11] - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-20 21:44:46.353 [Thread-11] - {dataSource-1} closed

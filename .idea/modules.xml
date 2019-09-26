@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/coupon-controller/coupon-controller.iml" filepath="$PROJECT_DIR$/coupon-controller/coupon-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon-dao/coupon-dao.iml" filepath="$PROJECT_DIR$/coupon-dao/coupon-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon-parant.iml" filepath="$PROJECT_DIR$/coupon-parant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon-service/coupon-service.iml" filepath="$PROJECT_DIR$/coupon-service/coupon-service.iml" />
+    </modules>
+  </component>
+</project>
