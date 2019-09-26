@@ -82,7 +82,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean//单机版配置
     public JedisConnectionFactory redisConnectionFactory() {
         JedisConnectionFactory factory = new JedisConnectionFactory();
-        factory.setHostName("192.168.3.22");
+        factory.setHostName("10.0.3.211");
 //        factory.setPassword(password);
         factory.setPort(6379);
         return factory;
