@@ -24,7 +24,6 @@ public class SmsCodeAuthenticationProvider implements AuthenticationProvider {
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
         SmsCodeAuthenticationToken authenticationToken = (SmsCodeAuthenticationToken) authentication;
-
         String phone = (String) authenticationToken.getPrincipal();
         String code = (String) authenticationToken.getCredentials();
 
@@ -33,10 +32,9 @@ public class SmsCodeAuthenticationProvider implements AuthenticationProvider {
         UserDetails userDetails = userDetailsService.loadUserByUsername(phone);
 
         // 此时鉴权成功后，应当重新 new 一个拥有鉴权的 authenticationResult 返回
-        SmsCodeAuthenticationToken authenticationResult = new SmsCodeAuthenticationToken(userDetails, userDetails.getAuthorities());
+        SmsCodeAuthenticationToken authenticationResult = new SmsCodeAuthenticationToken(userDetails,phone, userDetails.getAuthorities());
 
         authenticationResult.setDetails(authenticationToken.getDetails());
-
         return authenticationResult;
     }
 
@@ -50,6 +48,7 @@ public class SmsCodeAuthenticationProvider implements AuthenticationProvider {
         if(!code.equals(smsCode)) {
             throw new BadCredentialsException("验证码错误");
         }
+        redisTemplate.delete(RedisUtils.redis_phone_code + phone);
     }
 
     @Override

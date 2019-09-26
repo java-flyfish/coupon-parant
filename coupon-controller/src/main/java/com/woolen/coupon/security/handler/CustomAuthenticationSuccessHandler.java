@@ -36,10 +36,10 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         logger.info("登录成功,{}", authentication);
         //登陆成功信息使用response写回去
         response.setContentType("application/json;charset=UTF-8");
-        String token = UUID.randomUUID().toString();
-        redisTemplate.opsForValue().set(RedisUtils.redis_phone_token + token,authentication.getName(),7, TimeUnit.DAYS);
-        System.out.println("token:" + token);
-        response.getWriter().write(token);
+//        String token = UUID.randomUUID().toString();
+//        redisTemplate.opsForValue().set(RedisUtils.redis_phone_token + token,authentication.getName(),7, TimeUnit.DAYS);
+//        System.out.println("token:" + token);
+        response.getWriter().write("登录成功");
 //        response.sendRedirect("/");
     }
 }

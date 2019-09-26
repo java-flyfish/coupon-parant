@@ -1,3 +1,4 @@
+
 #spring配置
 spring:
   aop:
@@ -50,4 +51,6 @@ mybatis:
     mapper-locations: classpath:com.woolen.coupon.mapper/*.xml
     #模型所在的保命
     type-aliases-package: com.woolen.coupon.bean
+server:
+  port: 8081
 

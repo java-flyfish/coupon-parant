@@ -1,6 +1,5 @@
 package com.woolen.coupon.security.config;
 
-import com.woolen.coupon.security.filter.LindTokenAuthenticationFilter;
 import com.woolen.coupon.security.filter.SmsCodeAuthenticationFilter;
 import com.woolen.coupon.security.handler.CustomAuthenticationFailureHandler;
 import com.woolen.coupon.security.handler.CustomAuthenticationSuccessHandler;
@@ -35,9 +34,6 @@ public class SmsCodeAuthenticationSecurityConfig extends SecurityConfigurerAdapt
     private CustomAuthenticationFailureHandler customAuthenticationFailureHandler;
 
     @Autowired
-    private LindTokenAuthenticationFilter lindTokenAuthenticationFilter;
-
-    @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
     @Override
@@ -52,7 +48,6 @@ public class SmsCodeAuthenticationSecurityConfig extends SecurityConfigurerAdapt
         smsCodeAuthenticationProvider.setRedisTemplate(redisTemplate);
 
         http.authenticationProvider(smsCodeAuthenticationProvider)
-                .addFilterAfter(lindTokenAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .addFilterAfter(smsCodeAuthenticationFilter,UsernamePasswordAuthenticationFilter.class);
     }
 }

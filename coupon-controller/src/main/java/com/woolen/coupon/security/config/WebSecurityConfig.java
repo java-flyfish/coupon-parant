@@ -51,11 +51,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private SmsCodeAuthenticationSecurityConfig smsCodeAuthenticationSecurityConfig;
 
-    @Autowired
-    LindTokenAuthenticationSecurityConfig lindTokenAuthenticationSecurityConfig;
-//    @Autowired
-//    private LindTokenAuthenticationFilter lindTokenAuthenticationFilter;
-
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 设置拦截忽略文件夹，可以对静态资源放行
@@ -64,7 +59,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        http.apply(lindTokenAuthenticationSecurityConfig);
         http.apply(smsCodeAuthenticationSecurityConfig)
                 .and().authorizeRequests()
                 // 如果有允许匿名的url，填在下面
@@ -87,7 +81,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 //验证码过滤器
                 .addFilterBefore(new VerifyFilter(),UsernamePasswordAuthenticationFilter.class)
-//                .addFilterBefore(lindTokenAuthenticationFilter ,UsernamePasswordAuthenticationFilter.class)
                 .logout().permitAll()
                 // 自动登录
                 .and().rememberMe()

@@ -1,13 +1,16 @@
 package com.woolen.coupon.controller;
 
+import com.woolen.coupon.security.token.SmsCodeAuthenticationToken;
 import com.woolen.coupon.utils.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +21,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -62,7 +66,7 @@ public class LoginController {
 
     @RequestMapping("/sms/code")
     @ResponseBody
-    public void sms(String phone, HttpSession session) {
+    public String sms(String phone, HttpSession session) {
 
         int code = (int) Math.ceil(Math.random() * 9000 + 1000);
 
@@ -71,6 +75,7 @@ public class LoginController {
         //todo 接发送短信
         System.out.println("短信验证码：" + code);
         logger.info("{}：为 {} 设置短信验证码：{}", session.getId(), RedisUtils.redis_phone_code + phone, code);
+        return "验证码：" + code;
     }
 
 
@@ -96,9 +101,10 @@ public class LoginController {
         // Reload password post-security so we can generate token
         final UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         // 持久化的redis
-        String token = CommonUtils.encrypt(userDetails.getUsername());
+//        String token = CommonUtils.encrypt(userDetails.getUsername());
+        String token = UUID.randomUUID().toString();
         redisTemplate.opsForValue().set(token, userDetails.getUsername());
-        return token;
+        return token;*/
 
         if (code == null){
             return "短信验证码未空";
@@ -109,7 +115,7 @@ public class LoginController {
             redisTemplate.opsForValue().set(RedisUtils.redis_phone_token + phone,token,7l,TimeUnit.DAYS);
             System.out.println("token" + token);
             return token;
-        }*/
+        }
         return "短信验证码不正确";
     }
     /*@RequestMapping("/admin")
