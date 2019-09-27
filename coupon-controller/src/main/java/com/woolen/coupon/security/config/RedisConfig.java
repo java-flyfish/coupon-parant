@@ -29,6 +29,8 @@ public class RedisConfig extends CachingConfigurerSupport {
 
     @Value("${redis.cluster.nodes}")
     private String nodes;
+    @Value("${redis.host}")
+    private String host;
     @Value("${redis.maxTotal}")
     private Integer maxTotal;
     @Value("${redis.minIdle}")
@@ -82,9 +84,9 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Bean//单机版配置
     public JedisConnectionFactory redisConnectionFactory() {
         JedisConnectionFactory factory = new JedisConnectionFactory();
-        factory.setHostName("192.168.3.22");
+        factory.setHostName(host);
 //        factory.setPassword(password);
-        factory.setPort(6379);
+        factory.setPort(port);
         return factory;
     }
 

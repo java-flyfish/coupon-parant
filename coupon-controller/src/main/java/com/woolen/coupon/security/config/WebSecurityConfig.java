@@ -3,6 +3,7 @@ package com.woolen.coupon.security.config;
 import com.woolen.coupon.security.entryPoint.LoginJsonAuthenticationEntryPoint;
 import com.woolen.coupon.security.evaluator.CustomPermissionEvaluator;
 import com.woolen.coupon.security.filter.VerifyFilter;
+import com.woolen.coupon.security.handler.CustomAccessDeniedHandler;
 import com.woolen.coupon.security.handler.CustomAuthenticationFailureHandler;
 import com.woolen.coupon.security.handler.CustomAuthenticationSuccessHandler;
 import com.woolen.coupon.security.securityService.CustomUserDetailsService;
@@ -16,6 +17,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
@@ -53,8 +55,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     LindTokenAuthenticationSecurityConfig lindTokenAuthenticationSecurityConfig;
-//    @Autowired
-//    private LindTokenAuthenticationFilter lindTokenAuthenticationFilter;
+
+    @Autowired
+    private CustomAccessDeniedHandler customAccessDeniedHandler;
 
     @Override
     public void configure(WebSecurity web) throws Exception {
@@ -71,6 +74,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 // 如果有允许匿名的url，填在下面
                 .antMatchers("/getVerifyCode","/sms/**","/login","/lind-auth/**").permitAll()
                 .anyRequest().authenticated()
+                .and()
+                //无权限用户提示字符串消息设置
+                .exceptionHandling()
+                // getAccessDeniedHandler()是上文的方法
+                .accessDeniedHandler(customAccessDeniedHandler)
                 .and()
                 // 设置登陆页
                 .formLogin().loginPage("/login")
@@ -138,4 +146,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return handler;
     }
 
+   /* @Bean
+    public AccessDeniedHandler getAccessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
+    }*/
 }

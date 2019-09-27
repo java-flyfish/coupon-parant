@@ -1,5 +1,6 @@
 package com.woolen.coupon.controller;
 
+import com.woolen.coupon.base.BaseController;
 import com.woolen.coupon.utils.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +31,7 @@ import java.util.concurrent.TimeUnit;
  * @Version: V1.0
  **/
 @Controller
-public class LoginController {
+public class LoginController extends BaseController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired

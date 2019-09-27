@@ -1,5 +1,7 @@
 package com.woolen.coupon.security.handler;
 
+import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.response.Result;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -27,9 +29,10 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
     @Override
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
         logger.info("登陆失败");
-
         response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
         response.setContentType("application/json;charset=UTF-8");
-        response.getWriter().write(exception.getMessage());
+        Result result = new Result(null,false,"登陆失败！");
+        response.getWriter().write(JSONObject.toJSONString(result));
+        response.getWriter().flush();
     }
 }

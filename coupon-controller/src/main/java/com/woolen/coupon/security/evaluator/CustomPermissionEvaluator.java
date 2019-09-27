@@ -16,7 +16,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * @Info:
+ * @Info: 授权后用户的角色管理器
  * @ClassName: CustomPermissionEvaluator
  * @Author: weiyang
  * @Data: 2019/9/21 2:06 PM

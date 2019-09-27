@@ -1,5 +1,7 @@
 package com.woolen.coupon.security.handler;
 
+import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.response.Result;
 import com.woolen.coupon.utils.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -39,7 +41,8 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         String token = UUID.randomUUID().toString();
         redisTemplate.opsForValue().set(RedisUtils.redis_phone_token + token,authentication.getName(),7, TimeUnit.DAYS);
         System.out.println("token:" + token);
-        response.getWriter().write(token);
-//        response.sendRedirect("/");
+        Result result = new Result(token,true,"登陆成功！");
+        response.getWriter().write(JSONObject.toJSONString(result));
+        response.getWriter().flush();
     }
 }

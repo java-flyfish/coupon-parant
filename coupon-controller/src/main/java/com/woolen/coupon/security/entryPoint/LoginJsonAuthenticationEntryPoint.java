@@ -1,5 +1,7 @@
 package com.woolen.coupon.security.entryPoint;
 
+import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.response.Result;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
@@ -23,15 +25,11 @@ public class LoginJsonAuthenticationEntryPoint implements AuthenticationEntryPoi
         // redirect to login page. Use https if forceHttps true
         response.setContentType("application/json;charset=utf-8");
         PrintWriter out = response.getWriter();
-        StringBuffer sb = new StringBuffer();
-        sb.append("{\"status\":\"error\",\"msg\":\"");
 
-        sb.append("未登陆!");
+        Result result = new Result(null,false,"请登录！");
 
-        sb.append("\"}");
-        out.write(sb.toString());
+        out.write(JSONObject.toJSONString(result));
         out.flush();
         out.close();
-
     }
 }
