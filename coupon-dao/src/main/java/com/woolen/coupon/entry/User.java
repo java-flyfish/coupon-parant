@@ -32,6 +32,10 @@ public class User extends Model<User> {
 
     private String phone;
 
+    private Long created;
+
+    private Long updated;
+
 
     @Override
     protected Serializable pkVal() {
