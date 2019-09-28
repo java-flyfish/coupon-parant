@@ -2,6 +2,8 @@ package com.woolen.coupon.response;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @Info:
  * @ClassName: Result
@@ -10,7 +12,9 @@ import lombok.Data;
  * @Version: V1.0
  **/
 @Data
-public class Result {
+public class Result implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private Object data;
     private Boolean success;
     private String msg;
