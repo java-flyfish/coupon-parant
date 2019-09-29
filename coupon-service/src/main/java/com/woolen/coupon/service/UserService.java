@@ -2,6 +2,8 @@ package com.woolen.coupon.service;
 
 import com.woolen.coupon.entry.User;
 
+import java.util.Map;
+
 /**
  * @Info:
  * @ClassName: UserService
@@ -14,4 +16,5 @@ public interface UserService {
     User selectByName(String name);
     User selectByPhone(String phone);
 
+    Boolean insertUserAndRole(Map<String, Object> paramMap);
 }

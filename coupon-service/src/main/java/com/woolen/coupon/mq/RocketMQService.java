@@ -1,5 +1,7 @@
 package com.woolen.coupon.mq;
 
+import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.service.UserService;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
@@ -16,11 +18,13 @@ import org.apache.rocketmq.common.message.MessageExt;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @ConfigurationProperties(prefix = "rocketmq")
@@ -36,6 +40,9 @@ public class RocketMQService {
 
     private DefaultMQProducer defaultMQProducer;
     private DefaultMQPushConsumer defaultMQPushConsumer;
+
+    @Autowired
+    private UserService userService;
 
     public Boolean send(String message) throws Exception {
         Message msg = new Message(topic,tag, message.getBytes(RemotingHelper.DEFAULT_CHARSET));
@@ -70,7 +77,9 @@ public class RocketMQService {
                     String message = "";
                     try {
                         message = new String(msg.getBody(),"utf-8");
-                        System.out.println(message);
+                        logger.info("订单支付完成消息，创建用户：{}", JSONObject.toJSONString(message));
+                        Map<String,Object> paramMap = JSONObject.parseObject(message,Map.class);
+                        userService.insertUserAndRole(paramMap);
                     } catch (Exception e) {
                         e.printStackTrace();
                         return ConsumeConcurrentlyStatus.RECONSUME_LATER;
