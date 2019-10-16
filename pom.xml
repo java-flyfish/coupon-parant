@@ -75,7 +75,7 @@
 		<profile>
 			<id>prod</id>
 			<properties>
-				<!--<profile.active>prod</profile.active>-->
+				<profile.active>prod</profile.active>
 				<env>application-prod.properties</env>
 			</properties>
 		</profile>

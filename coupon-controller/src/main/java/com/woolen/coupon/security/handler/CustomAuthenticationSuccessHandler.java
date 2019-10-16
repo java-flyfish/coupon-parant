@@ -1,10 +1,15 @@
 package com.woolen.coupon.security.handler;
 
 import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.entry.User;
+import com.woolen.coupon.entry.UvStatistic;
 import com.woolen.coupon.response.Result;
+import com.woolen.coupon.response.UserVo;
+import com.woolen.coupon.service.UserService;
 import com.woolen.coupon.utils.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.core.Authentication;
@@ -15,6 +20,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -33,6 +39,9 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         logger.info("登录成功,{}", authentication);
@@ -40,9 +49,29 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
         response.setContentType("application/json;charset=UTF-8");
         String token = UUID.randomUUID().toString();
         redisTemplate.opsForValue().set(RedisUtils.redis_phone_token + token,authentication.getName(),7, TimeUnit.DAYS);
+        User user = userService.selectByPhone(authentication.getName());
+        UserVo userVo = new UserVo();
+        BeanUtils.copyProperties(user,userVo);
+        userVo.setToken(token);
         System.out.println("token:" + token);
-        Result result = new Result(token,true,"登陆成功！");
-        response.getWriter().write(JSONObject.toJSONString(result));
-        response.getWriter().flush();
+        Result result = new Result(userVo,true,"登陆成功！");
+
+        UvStatistic uvStatistic = new UvStatistic();
+        String osType = request.getHeader("osType");
+        uvStatistic.setSource(Integer.valueOf(osType));
+        uvStatistic.setType(1);//登陆
+        uvStatistic.setUserId(user.getId());
+        sendRedisMsg(uvStatistic,user.getPhone());
+        PrintWriter writer = response.getWriter();
+        writer.write(JSONObject.toJSONString(result));
+        writer.flush();
+        writer.close();
+    }
+
+    public void sendRedisMsg(UvStatistic uvStatistic, String phone){
+        if (!redisTemplate.hasKey(RedisUtils.redis_uv_prefix + phone)){
+            redisTemplate.convertAndSend(RedisUtils.redis_uv_topic, JSONObject.toJSONString(uvStatistic));
+            redisTemplate.opsForValue().set(RedisUtils.redis_uv_prefix + phone,"1");
+        }
     }
 }

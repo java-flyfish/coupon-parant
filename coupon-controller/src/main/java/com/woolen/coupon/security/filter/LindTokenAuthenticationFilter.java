@@ -1,6 +1,10 @@
 package com.woolen.coupon.security.filter;
 
+import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.entry.User;
+import com.woolen.coupon.entry.UvStatistic;
 import com.woolen.coupon.security.token.LindTokenAuthenticationToken;
+import com.woolen.coupon.service.UserService;
 import com.woolen.coupon.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -38,6 +42,9 @@ public class LindTokenAuthenticationFilter extends OncePerRequestFilter {
     @Qualifier("phoneUserDetailsService")
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private UserService userService;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authHeader = request.getHeader(this.tokenHeader);
@@ -45,6 +52,17 @@ public class LindTokenAuthenticationFilter extends OncePerRequestFilter {
             final String authToken = authHeader.substring(tokenHead.length()); // The part after "Bearer "
             if (authToken != null && redisTemplate.hasKey(RedisUtils.redis_phone_token + authToken)) {
                 String phone = redisTemplate.opsForValue().get(RedisUtils.redis_phone_token + authToken);
+                //todo 在这里统计用户活跃度
+                if (phone != null){
+                    User user = userService.selectByPhone(phone);
+                    UvStatistic uvStatistic = new UvStatistic();
+                    String osType = request.getHeader("osType");
+                    uvStatistic.setSource(Integer.valueOf(osType));
+                    uvStatistic.setType(3);//其他
+                    uvStatistic.setUserId(user.getId());
+                    sendRedisMsg(uvStatistic,phone);
+                }
+
                 if (phone != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                     UserDetails userDetails = this.userDetailsService.loadUserByUsername(phone);
                     //可以校验token和username是否有效，目前由于token对应username存在redis，都以默认都是有效的bv
@@ -79,5 +97,12 @@ public class LindTokenAuthenticationFilter extends OncePerRequestFilter {
             SecurityContextHolder.getContext().setAuthentication(null);
         }
         filterChain.doFilter(request, response);*/
+    }
+
+    public void sendRedisMsg(UvStatistic uvStatistic,String phone){
+        if (!redisTemplate.hasKey(RedisUtils.redis_uv_prefix + phone)){
+            redisTemplate.convertAndSend(RedisUtils.redis_uv_topic, JSONObject.toJSONString(uvStatistic));
+            redisTemplate.opsForValue().set(RedisUtils.redis_uv_prefix + phone,"1");
+        }
     }
 }
