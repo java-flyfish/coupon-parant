@@ -1,6 +1,7 @@
 package com.woolen.coupon.mq;
 
 import com.alibaba.fastjson.JSONObject;
+import com.woolen.coupon.entry.User;
 import com.woolen.coupon.service.UserService;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
@@ -79,6 +80,11 @@ public class RocketMQService {
                         message = new String(msg.getBody(),"utf-8");
                         logger.info("订单支付完成消息，创建用户：{}", JSONObject.toJSONString(message));
                         Map<String,Object> paramMap = JSONObject.parseObject(message,Map.class);
+                        //todo 插入需要去重
+                        User user = userService.selectByPhone((String) paramMap.get("phone"));
+                        if (user != null){
+                            return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+                        }
                         userService.insertUserAndRole(paramMap);
                     } catch (Exception e) {
                         e.printStackTrace();

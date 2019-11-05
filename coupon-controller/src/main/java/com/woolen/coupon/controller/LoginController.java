@@ -2,6 +2,8 @@ package com.woolen.coupon.controller;
 
 import com.woolen.coupon.base.BaseController;
 import com.woolen.coupon.utils.RedisUtils;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,26 +29,27 @@ import java.util.concurrent.TimeUnit;
  * @Data: 2019/9/20 9:18 PM
  * @Version: V1.0
  **/
-@Controller
+@RestController
+@ApiModel()
 public class LoginController extends BaseController {
     private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
-    @RequestMapping("/")
+    @GetMapping("/")
     public String showHome() {
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         logger.info("当前登陆用户：" + name);
         return "home.html";
     }
 
-    @RequestMapping("/login")
+    @PostMapping("/login")
     public String showLogin() {
         return "login.html";
     }
 
-    @RequestMapping("/login/error")
+    @GetMapping("/login/error")
     public void errorLogin(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html;charset=utf-8");
         AuthenticationException exception =
@@ -61,8 +61,8 @@ public class LoginController extends BaseController {
         }
     }
 
-    @RequestMapping("/sms/code")
-    @ResponseBody
+    @PostMapping("/sms/code")
+    @ApiOperation(value = "发送短信", notes = "创建订单", position = -1)
     public void sms(String phone, HttpSession session) {
 
         int code = (int) Math.ceil(Math.random() * 9000 + 1000);
@@ -127,15 +127,16 @@ public class LoginController extends BaseController {
         return "如果你看见这句话，说明你有ROLE_USER角色";
     }
 */
-    @RequestMapping("/admin")
-    @ResponseBody
+    @ApiOperation(value = "/admin路径具有r权限校验", notes = "/admin路径具有r权限校验", position = -1)
+    @GetMapping("/admin")
     @PreAuthorize("hasPermission('/admin','r')")
     public String printAdminR() {
         return "如果你看见这句话，说明你访问/admin路径具有r权限";
     }
 
-    @RequestMapping("/admin/c")
-    @ResponseBody
+
+    @ApiOperation(value = "/admin路径具有c权限校验", notes = "/admin路径具有c权限校验", position = -1)
+    @GetMapping("/admin/c")
     @PreAuthorize("hasPermission('/admin','c')")
     public String printAdminC() {
         return "如果你看见这句话，说明你访问/admin路径具有c权限";

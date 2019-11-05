@@ -70,8 +70,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.apply(smsCodeAuthenticationSecurityConfig)
                 .and().authorizeRequests()
                 // 如果有允许匿名的url，填在下面
-// 如果有允许匿名的url，填在下面
-                .antMatchers("/getVerifyCode","/sms/**","/login","/lind-auth/**").permitAll()
+                .antMatchers("/getVerifyCode","/sms/**","/login","/lind-auth/**","/v2/api-docs", "/swagger-resources", "/swagger-ui.html", "/webjars/**","/swagger-resources/configuration/ui").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 //无权限用户提示字符串消息设置
