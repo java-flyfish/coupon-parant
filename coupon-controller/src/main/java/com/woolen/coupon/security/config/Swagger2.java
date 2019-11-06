@@ -39,7 +39,7 @@ public class Swagger2{
                 .modelRef(new ModelRef("string")).parameterType("header")
                 .required(false).defaultValue("Bearer ").build();//required表示是否必填，defaultvalue表示默认值
         ParameterBuilder osType = new ParameterBuilder();
-        osType.name("osType").description("软件平台信息")//name表示名称，description表示描述
+        osType.name("osType").description("软件平台信息,1:安卓,2:ios,3:小程序,4:网页")//name表示名称，description表示描述
                 .modelRef(new ModelRef("string")).parameterType("header")
                 .required(true).build();//required表示是否必填，defaultvalue表示默认值
         pars.add(ticketPar.build());//添加完此处一定要把下边的带***的也加上否则不生效

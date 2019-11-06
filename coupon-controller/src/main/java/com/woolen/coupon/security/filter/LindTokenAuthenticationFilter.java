@@ -6,9 +6,11 @@ import com.woolen.coupon.entry.UvStatistic;
 import com.woolen.coupon.security.token.LindTokenAuthenticationToken;
 import com.woolen.coupon.service.UserService;
 import com.woolen.coupon.utils.RedisUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -45,6 +47,9 @@ public class LindTokenAuthenticationFilter extends OncePerRequestFilter {
     @Autowired
     private UserService userService;
 
+    @Autowired//不需要自己配置，spring自己维护了一个线程池
+    private ThreadPoolTaskExecutor executor;
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String authHeader = request.getHeader(this.tokenHeader);
@@ -56,11 +61,14 @@ public class LindTokenAuthenticationFilter extends OncePerRequestFilter {
                 if (phone != null){
                     User user = userService.selectByPhone(phone);
                     UvStatistic uvStatistic = new UvStatistic();
+                    uvStatistic.setSource(0);//其他类型
                     String osType = request.getHeader("osType");
-                    uvStatistic.setSource(Integer.valueOf(osType));
+                    if (StringUtils.isNotBlank(osType)){
+                        uvStatistic.setSource(Integer.valueOf(osType));
+                    }
                     uvStatistic.setType(3);//其他
                     uvStatistic.setUserId(user.getId());
-                    sendRedisMsg(uvStatistic,phone);
+                    executor.execute(()->sendRedisMsg(uvStatistic,phone));
                 }
 
                 if (phone != null && SecurityContextHolder.getContext().getAuthentication() == null) {
