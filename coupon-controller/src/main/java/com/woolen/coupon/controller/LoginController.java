@@ -63,7 +63,7 @@ public class LoginController extends BaseController {
 
     @PostMapping("/sms/code")
     @ApiOperation(value = "发送短信", notes = "创建订单", position = -1)
-    public void sms(String phone, HttpSession session) {
+    public String sms(String phone, HttpSession session) {
 
         int code = (int) Math.ceil(Math.random() * 9000 + 1000);
 
@@ -72,6 +72,7 @@ public class LoginController extends BaseController {
         //todo 接发送短信
         System.out.println("短信验证码：" + code);
         logger.info("{}：为 {} 设置短信验证码：{}", session.getId(), RedisUtils.redis_phone_code + phone, code);
+        return "短信验证码" + code;
     }
 
 
